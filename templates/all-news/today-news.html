@@ -1,0 +1,17 @@
+{% extends 'all-news/base.html' %}
+{% block content %}
+{{ block.super }}
+
+{% for news_item in news %}
+<div class="row">
+    <!-- News articles -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1 class="text-center">{{news_item.title}}</h1>
+    </div>
+    <!-- Article images -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="{{news_item.article_image_url}}" alt="Image" class="img-responsive">
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
